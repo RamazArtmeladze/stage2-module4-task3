@@ -12,11 +12,11 @@
     <artifactId>task2-observer-pattern</artifactId>
 
     <name>task2-observer-pattern</name>
-   <url>http://www.mjc.com</url>
+    <url>http://www.mjc.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 </project>
