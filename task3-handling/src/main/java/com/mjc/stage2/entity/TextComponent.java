@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TextComponent extends AbstractTextComponent {
-    private List<AbstractTextComponent> componentList = new ArrayList<>();
-    private TextComponentType componentType;
+    private final List<AbstractTextComponent> componentList = new ArrayList<>();
 
     public TextComponent(TextComponentType componentType) {
         super(componentType);
-        this.componentType = componentType;
     }
 
     @Override
@@ -18,7 +16,7 @@ public class TextComponent extends AbstractTextComponent {
         for (AbstractTextComponent component : componentList) {
             result.append(component.operation()).append(componentType.getDelimiter());
         }
-        return result.toString().trim();
+        return result.toString().trim(); // Remove trailing delimiter
     }
 
     @Override

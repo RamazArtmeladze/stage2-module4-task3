@@ -5,14 +5,14 @@ import com.mjc.stage2.entity.TextComponent;
 import com.mjc.stage2.entity.TextComponentType;
 
 public class LexemeParser extends AbstractTextParser {
-    private static final String LEXEME_REGEX = "\\s+";
+    private static final String LEXEME_REGEX = "\\s+"; // Split by spaces
 
     @Override
-    public void parse(AbstractTextComponent textComponent, String string) {
-        String[] lexemes = string.split(LEXEME_REGEX);
+    public void parse(AbstractTextComponent parentComponent, String sentence) {
+        String[] lexemes = sentence.split(LEXEME_REGEX);
         for (String lexeme : lexemes) {
             TextComponent lexemeComponent = new TextComponent(TextComponentType.WORD);
-            textComponent.add(lexemeComponent);
+            parentComponent.add(lexemeComponent);
             if (nextParser != null) {
                 nextParser.parse(lexemeComponent, lexeme);
             }

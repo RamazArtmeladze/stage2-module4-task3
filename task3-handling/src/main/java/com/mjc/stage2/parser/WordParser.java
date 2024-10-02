@@ -6,10 +6,10 @@ import com.mjc.stage2.entity.SymbolLeaf;
 public class WordParser extends AbstractTextParser {
 
     @Override
-    public void parse(AbstractTextComponent textComponent, String string) {
-        for (char symbol : string.toCharArray()) {
+    public void parse(AbstractTextComponent lexemeComponent, String word) {
+        for (char symbol : word.toCharArray()) {
             SymbolLeaf symbolLeaf = new SymbolLeaf(symbol);
-            textComponent.add(symbolLeaf);
+            lexemeComponent.add(symbolLeaf);
         }
     }
 }

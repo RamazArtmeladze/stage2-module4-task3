@@ -1,7 +1,7 @@
 package com.mjc.stage2.entity;
 
 public class SymbolLeaf extends AbstractTextComponent {
-    private char value;
+    private final char value;
 
     public SymbolLeaf(char value) {
         super(TextComponentType.SYMBOL);
@@ -15,12 +15,12 @@ public class SymbolLeaf extends AbstractTextComponent {
 
     @Override
     public void add(AbstractTextComponent textComponent) {
-        throw new UnsupportedOperationException("Cannot add to leaf component.");
+        throw new UnsupportedOperationException("Cannot add child to SymbolLeaf");
     }
 
     @Override
     public void remove(AbstractTextComponent textComponent) {
-        throw new UnsupportedOperationException("Cannot remove from leaf component.");
+        throw new UnsupportedOperationException("Cannot remove child from SymbolLeaf");
     }
 
     @Override
