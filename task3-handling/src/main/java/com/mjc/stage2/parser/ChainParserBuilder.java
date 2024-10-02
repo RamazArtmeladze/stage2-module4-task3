@@ -1,21 +1,20 @@
 package com.mjc.stage2.parser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ChainParserBuilder {
-    private List<AbstractTextParser> parsers = new ArrayList<>();
+    private AbstractTextParser parserChain;
 
     public ChainParserBuilder() {
-    }
+        // Define parsers in the correct order: WordParser -> LexemeParser
+        WordParser wordParser = new WordParser();
+        LexemeParser lexemeParser = new LexemeParser();
 
-    public ChainParserBuilder setParser(AbstractTextParser abstractTextParser) {
-        // Write your code here!
-        return this;
+        lexemeParser.setNextParser(wordParser);
+
+        // Start chain with the LexemeParser
+        parserChain = lexemeParser;
     }
 
     public AbstractTextParser build() {
-        // Write your code here!
-        return null;
+        return parserChain;
     }
 }
