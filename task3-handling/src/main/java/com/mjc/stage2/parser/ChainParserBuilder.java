@@ -8,7 +8,7 @@ public class ChainParserBuilder {
         WordParser wordParser = new WordParser();
         LexemeParser lexemeParser = new LexemeParser();
 
-        lexemeParser.setNextParser(wordParser);
+        lexemeParser.setNextParser(wordParser);  // Set the next parser
 
         // Start chain with the LexemeParser
         parserChain = lexemeParser;
@@ -16,5 +16,9 @@ public class ChainParserBuilder {
 
     public AbstractTextParser build() {
         return parserChain;
+    }
+
+    public void setParser(AbstractTextParser nextParser) {
+        this.parserChain = nextParser;
     }
 }
